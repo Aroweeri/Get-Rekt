@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://chain.tres" type="Material" id=1]
 [ext_resource path="res://crane.gd" type="Script" id=2]
 
 [sub_resource type="CubeMesh" id=1]
@@ -16,19 +15,16 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 [sub_resource type="ConvexPolygonShape" id=5]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[sub_resource type="CubeMesh" id=6]
+[sub_resource type="SphereMesh" id=6]
 
-[sub_resource type="ConvexPolygonShape" id=7]
-points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
-
-[sub_resource type="SphereMesh" id=8]
-
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.101961, 0.0470588, 0, 1 )
 metallic = 0.34
 roughness = 0.51
 
-[sub_resource type="SphereShape" id=10]
+[sub_resource type="SphereShape" id=8]
+
+[sub_resource type="SphereShape" id=9]
 
 [node name="crane" type="Spatial"]
 script = ExtResource( 2 )
@@ -37,7 +33,7 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87754, 0, 0 )
 
 [node name="Camera" type="Camera" parent="crane_origin"]
-transform = Transform( -3.8505e-08, 0.47332, -0.880891, 2.06895e-08, 0.880891, 0.47332, 1, 0, -4.37114e-08, 0.374678, 11.6968, -1.1768 )
+transform = Transform( -3.49164e-08, 0.601606, -0.798793, 2.62971e-08, 0.798793, 0.601606, 1, -5.32907e-15, -4.37114e-08, -0.952367, 12.7432, -2.2967 )
 
 [node name="crane_tower" type="StaticBody" parent="crane_origin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35254, 0, -5.67523 )
@@ -64,7 +60,7 @@ transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, -4.36177, 7.02661, 5.81
 shape = SubResource( 3 )
 
 [node name="chain_anchor" type="StaticBody" parent="crane_origin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9471, 11.842, 0.145196 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 11.842, 0.145 )
 
 [node name="MeshInstance" type="MeshInstance" parent="crane_origin/chain_anchor"]
 transform = Transform( 0.201959, 0, 0, 0, 0.201959, 0, 0, 0, 0.201959, 0, 0, 0 )
@@ -76,34 +72,34 @@ transform = Transform( 0.201959, 0, 0, 0, 0.201959, 0, 0, 0, 0.201959, 0, 0, 0 )
 shape = SubResource( 5 )
 
 [node name="PinJoint" type="PinJoint" parent="crane_origin/chain_anchor"]
-transform = Transform( 4.31194, 0, 0, 0, 4.31194, 0, 0, 0, 4.31194, 0.00260758, -0.210515, 0.00108093 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0469933, 0 )
 nodes/node_a = NodePath("..")
-nodes/node_b = NodePath("../../../chain")
-params/bias = 0.56
+nodes/node_b = NodePath("../../../chain_placeholder")
 
-[node name="chain" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3.07479, 7.07291, 0.145191 )
+[node name="ball" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06923, 2.21685, 0.143428 )
 collision_mask = 0
+mass = 8.0
 
-[node name="MeshInstance" type="MeshInstance" parent="chain"]
-transform = Transform( 0.013, 0, 0, 0, 0.013, 2.96701e-07, 0, -2.91809e-08, 4.59806, 0, 0, 0 )
-mesh = SubResource( 6 )
-material/0 = ExtResource( 1 )
-
-[node name="CollisionShape" type="CollisionShape" parent="chain"]
-transform = Transform( 0.013, 0, 0, 0, 0.013, 2.96701e-07, 0, -2.91809e-08, 4.59806, 0, 0, 0 )
-shape = SubResource( 7 )
-
-[node name="ball" type="RigidBody" parent="chain"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.00555861, 0.00176293, -4.86543 )
-collision_mask = 0
-mass = 4.0
-
-[node name="MeshInstance" type="MeshInstance" parent="chain/ball"]
+[node name="MeshInstance" type="MeshInstance" parent="ball"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
-mesh = SubResource( 8 )
-material/0 = SubResource( 9 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
 
-[node name="CollisionShape" type="CollisionShape" parent="chain/ball"]
+[node name="CollisionShape" type="CollisionShape" parent="ball"]
 transform = Transform( 0.504662, 0, 0, 0, 0.504662, 0, 0, 0, 0.504662, 0, 0, 0 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
+
+[node name="chain_placeholder" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06846, 10.2384, 0.136665 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="chain_placeholder"]
+shape = SubResource( 9 )
+
+[node name="SliderJoint" type="SliderJoint" parent="chain_placeholder"]
+transform = Transform( 5.76205e-08, 1, 0, -1, 5.76205e-08, 0, 0, 0, 1, -2.18883, -8.04109, -0.131461 )
+nodes/node_a = NodePath("../../ball")
+nodes/node_b = NodePath("..")
+linear_limit/upper_distance = 9.0
