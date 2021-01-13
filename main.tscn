@@ -38,3 +38,5 @@ shape = SubResource( 3 )
 transform = Transform( 0.829915, 0, 0.55789, 0, 1, 0, -0.55789, 0, 0.829915, 0.373429, 0.114076, 1.94148 )
 
 [node name="crane" parent="." instance=ExtResource( 1 )]
+
+[node name="Node" type="Node" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://crane.gd" type="Script" id=2]
 
@@ -25,6 +25,9 @@ roughness = 0.51
 [sub_resource type="SphereShape" id=8]
 
 [sub_resource type="SphereShape" id=9]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.337255, 0.337255, 0.337255, 1 )
 
 [node name="crane" type="Spatial"]
 script = ExtResource( 2 )
@@ -103,3 +106,6 @@ transform = Transform( 5.76205e-08, 1, 0, -1, 5.76205e-08, 0, 0, 0, 1, -2.18883,
 nodes/node_a = NodePath("../../ball")
 nodes/node_b = NodePath("..")
 linear_limit/upper_distance = 9.0
+
+[node name="chain" type="ImmediateGeometry" parent="."]
+material_override = SubResource( 10 )

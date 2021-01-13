@@ -27,3 +27,16 @@ func _physics_process(delta):
 		limit = node.get_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER);
 		if(limit > -1):
 			node.set_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER, limit - ball_vertical_speed);
+			
+func _process(delta):
+	
+	#draw line from chain anchor to ball
+	var ballPos = get_node("ball").global_transform.origin;
+	var anchorPos = get_node("crane_origin/chain_anchor").global_transform.origin;
+	var chain = get_node("chain");
+	chain.clear();
+	chain.begin(Mesh.PRIMITIVE_LINES);
+	chain.add_vertex(ballPos);
+	chain.add_vertex(anchorPos);
+	chain.end();
+	
