@@ -46,8 +46,6 @@ shape = SubResource( 3 )
 
 [node name="crane" parent="." instance=ExtResource( 3 )]
 
-[node name="Node" type="Node" parent="."]
-
 [node name="score" type="Label" parent="."]
 margin_left = 10.0
 margin_top = 10.0
