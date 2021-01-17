@@ -39,27 +39,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87754, 0, 0 )
 transform = Transform( -3.49164e-08, 0.601606, -0.798793, 2.62971e-08, 0.798793, 0.601606, 1, -5.32907e-15, -4.37114e-08, -0.952367, 12.7432, -2.2967 )
 
 [node name="crane_tower" type="StaticBody" parent="crane_origin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.35254, 0, -5.67523 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174745, 7.02889, 0.124573 )
 
 [node name="MeshInstance" type="MeshInstance" parent="crane_origin/crane_tower"]
-transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, -4.36177, 7.02661, 5.81338 )
+transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="crane_origin/crane_tower"]
-transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, -4.36177, 7.02661, 5.81338 )
+transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, 0, 0, 0 )
 shape = SubResource( 2 )
 
 [node name="crane_arm" type="StaticBody" parent="crane_origin"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 12.4717, 16.9935, -5.67523 )
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.61596, 12.6229, 0.135642 )
 
 [node name="MeshInstance" type="MeshInstance" parent="crane_origin/crane_arm"]
-transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, -4.36177, 7.02661, 5.81338 )
+transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="crane_origin/crane_arm"]
-transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, -4.36177, 7.02661, 5.81338 )
+transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, 0, 0, 0 )
 shape = SubResource( 3 )
 
 [node name="chain_anchor" type="StaticBody" parent="crane_origin"]
