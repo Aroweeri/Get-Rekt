@@ -26,7 +26,7 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 script = ExtResource( 4 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.869, -6.35171 )
+transform = Transform( 0.865003, 0.199099, -0.460576, 0.501767, -0.343229, 0.793992, 0, -0.917907, -0.396796, 0, 12.869, -6.35171 )
 light_color = Color( 0.878431, 0.996078, 1, 1 )
 shadow_enabled = true
 
@@ -93,7 +93,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07099, 0 )
 shape = SubResource( 4 )
 
 [node name="platform" type="StaticBody" parent="target2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="target2/platform"]
 transform = Transform( 2.17605, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0 )
