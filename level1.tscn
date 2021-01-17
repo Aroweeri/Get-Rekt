@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ground.tres" type="Material" id=1]
 [ext_resource path="res://structure1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://crane.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level1.gd" type="Script" id=4]
 
 [sub_resource type="Environment" id=1]
 ambient_light_color = Color( 0.74902, 0.988235, 1, 1 )
@@ -13,7 +14,16 @@ ambient_light_energy = 0.26
 [sub_resource type="ConcavePolygonShape" id=3]
 data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
 
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 2.25228, 1.44745, 1.22299 )
+
+[sub_resource type="CubeMesh" id=5]
+
+[sub_resource type="ConvexPolygonShape" id=6]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
 [node name="level1" type="Spatial"]
+script = ExtResource( 4 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.869, -6.35171 )
@@ -34,9 +44,36 @@ material/0 = ExtResource( 1 )
 transform = Transform( 11.114, 0, 0, 0, 1, 0, 0, 0, 11.114, -0.180792, -0.963347, 0.0371075 )
 shape = SubResource( 3 )
 
-[node name="Spatial" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.829915, 0, 0.55789, 0, 1, 0, -0.55789, 0, 0.829915, 0.373429, 0.114076, 1.94148 )
+[node name="target1" parent="." instance=ExtResource( 2 )]
+transform = Transform( 0.856555, 0, -0.516055, 0, 1, 0, 0.516055, 0, 0.856555, -2.00195, 2.67973, 4.28568 )
 
 [node name="crane" parent="." instance=ExtResource( 3 )]
 
 [node name="Node" type="Node" parent="."]
+
+[node name="target1area" type="Area" parent="."]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2.34979, 3.40613, 4.20204 )
+
+[node name="CollisionShape" type="CollisionShape" parent="target1area"]
+shape = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 0.875507, 0, -0.483206, 0, 1, 0, 0.483206, 0, 0.875507, -2.41853, 2.39968, 4.23925 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+transform = Transform( 2.17605, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 2.17605, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 6 )
+
+[node name="score" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
