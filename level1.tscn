@@ -29,6 +29,8 @@ script = ExtResource( 4 )
 transform = Transform( 0.865003, 0.199099, -0.460575, 0.501767, -0.343229, 0.793992, 0, -0.917907, -0.396795, -0.0115964, 12.869, -6.35218 )
 light_color = Color( 0.878431, 0.996078, 1, 1 )
 shadow_enabled = true
+directional_shadow_split_1 = 0.182
+directional_shadow_split_2 = 0.291
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
