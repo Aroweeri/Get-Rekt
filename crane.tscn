@@ -93,6 +93,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0469933, 0 )
 nodes/node_a = NodePath("..")
 nodes/node_b = NodePath("../../../chain_placeholder")
 
+[node name="ChainMountPoint" type="Spatial" parent="crane_origin/chain_anchor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110733, 0 )
+
 [node name="ball" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62893, 0.841178, 0.143428 )
 collision_mask = 0
