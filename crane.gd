@@ -11,21 +11,21 @@ func _physics_process(delta):
 		get_node("crane_origin").rotate_y(0.2*delta)
 	if(Input.is_action_pressed("backward")):
 		node = get_node("crane_origin/chain_anchor");
-		if(node.transform.origin.x > 2):
+		if(node.transform.origin.x > 1.5):
 			node.translate(Vector3(-0.05,0,0));
 	elif(Input.is_action_pressed("forward")):
 		node = get_node("crane_origin/chain_anchor");
-		if(node.transform.origin.x < 12):
+		if(node.transform.origin.x < 14.5):
 			node.translate(Vector3(0.05,0,0));
 	if(Input.is_action_pressed("raise")):
 		node = get_node("chain_placeholder/SliderJoint");
 		limit = node.get_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER);
-		if(limit < 8.9):
+		if(limit < 13.9):
 			node.set_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER, limit + ball_vertical_speed);
 	elif(Input.is_action_pressed("lower")):
 		node = get_node("chain_placeholder/SliderJoint");
 		limit = node.get_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER);
-		if(limit > -1):
+		if(limit > 0):
 			node.set_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER, limit - ball_vertical_speed);
 			
 func _process(delta):

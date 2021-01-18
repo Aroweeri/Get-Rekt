@@ -1,32 +1,31 @@
 [gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://crane2.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://crane.gd" type="Script" id=2]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 8.68859, 0.467903, 0.434465 )
 
-[sub_resource type="ConcavePolygonShape" id=2]
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+[sub_resource type="CubeMesh" id=2]
 
-[sub_resource type="ConcavePolygonShape" id=3]
-data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.388235, 0.388235, 0.388235, 1 )
 
-[sub_resource type="CubeMesh" id=4]
-
-[sub_resource type="ConvexPolygonShape" id=5]
+[sub_resource type="ConvexPolygonShape" id=4]
 points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
 
-[sub_resource type="SphereMesh" id=6]
+[sub_resource type="SphereMesh" id=5]
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=6]
 albedo_color = Color( 0.101961, 0.0470588, 0, 1 )
 metallic = 0.34
 roughness = 0.51
 
+[sub_resource type="SphereShape" id=7]
+
 [sub_resource type="SphereShape" id=8]
 
-[sub_resource type="SphereShape" id=9]
-
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=9]
 albedo_color = Color( 0.337255, 0.337255, 0.337255, 1 )
 
 [node name="crane" type="Spatial"]
@@ -36,50 +35,64 @@ script = ExtResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87754, 0, 0 )
 
 [node name="Camera" type="Camera" parent="crane_origin"]
-transform = Transform( -3.49164e-08, 0.601606, -0.798793, 2.62971e-08, 0.798793, 0.601606, 1, -5.32907e-15, -4.37114e-08, -0.952367, 12.7432, -2.2967 )
+transform = Transform( -3.25512e-08, 0.667417, -0.744684, 2.91738e-08, 0.744684, 0.667417, 1, -2.30926e-14, -4.37115e-08, 0.290118, 15.9893, -1.22906 )
+fov = 84.7
 
-[node name="crane_tower" type="StaticBody" parent="crane_origin"]
+[node name="cranebody" type="StaticBody" parent="crane_origin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174745, 7.02889, 0.124573 )
 
-[node name="MeshInstance" type="MeshInstance" parent="crane_origin/crane_tower"]
-transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, 0, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = null
+[node name="CollisionShape" type="CollisionShape" parent="crane_origin/cranebody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19547, 9.00176, 0 )
+shape = SubResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="crane_origin/crane_tower"]
-transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, 0, 0, 0 )
-shape = SubResource( 2 )
-
-[node name="crane_arm" type="StaticBody" parent="crane_origin"]
-transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.61596, 12.6229, 0.135642 )
-
-[node name="MeshInstance" type="MeshInstance" parent="crane_origin/crane_arm"]
-transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, 0, 0, 0 )
-mesh = SubResource( 1 )
-material/0 = null
-
-[node name="CollisionShape" type="CollisionShape" parent="crane_origin/crane_arm"]
-transform = Transform( 0.6, 0, 0, 0, 7.08, 0, 0, 0, 0.6, 0, 0, 0 )
-shape = SubResource( 3 )
-
-[node name="SpotLight" type="SpotLight" parent="crane_origin/crane_arm"]
-transform = Transform( 0.707107, -6.18172e-08, 0.707107, -0.707107, 1.23197e-14, 0.707107, -4.37114e-08, -1, -4.37114e-08, -1.23827, 3.27241, 0 )
+[node name="SpotLight" type="SpotLight" parent="crane_origin/cranebody"]
+transform = Transform( 0.707107, -2.46905e-14, -0.707107, 0.707107, -6.18172e-08, 0.707107, -4.37114e-08, -1, -4.37113e-08, 2.12882, 8.0168, 0.00745649 )
 light_color = Color( 1, 0.992157, 0.803922, 1 )
 light_energy = 3.0
 shadow_enabled = true
 spot_range = 25.9628
 
+[node name="mesh" type="MeshInstance" parent="crane_origin/cranebody"]
+transform = Transform( -2.28699e-08, 0, 0.523203, 0, 0.523203, 0, -0.523203, 0, -2.28699e-08, 0.0103226, -7.10242, -0.0133069 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+material/14 = null
+material/15 = null
+material/16 = null
+material/17 = null
+material/18 = null
+material/19 = null
+material/20 = null
+material/21 = null
+material/22 = null
+material/23 = null
+material/24 = null
+material/25 = null
+
 [node name="chain_anchor" type="StaticBody" parent="crane_origin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 11.842, 0.145 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 15.36, 0.145 )
 
 [node name="MeshInstance" type="MeshInstance" parent="crane_origin/chain_anchor"]
-transform = Transform( 0.201959, 0, 0, 0, 0.201959, 0, 0, 0, 0.201959, 0, 0, 0 )
-mesh = SubResource( 4 )
-material/0 = null
+transform = Transform( 0.201959, 0, 0, 0, 0.113524, 0, 0, 0, 0.123255, 0, 0.0855732, 0 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="crane_origin/chain_anchor"]
 transform = Transform( 0.201959, 0, 0, 0, 0.201959, 0, 0, 0, 0.201959, 0, 0, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="PinJoint" type="PinJoint" parent="crane_origin/chain_anchor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0469933, 0 )
@@ -87,32 +100,33 @@ nodes/node_a = NodePath("..")
 nodes/node_b = NodePath("../../../chain_placeholder")
 
 [node name="ball" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06923, 2.21685, 0.143428 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62893, 0.841178, 0.143428 )
 collision_mask = 0
 mass = 8.0
 
 [node name="MeshInstance" type="MeshInstance" parent="ball"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
-mesh = SubResource( 6 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="ball"]
 transform = Transform( 0.504662, 0, 0, 0, 0.504662, 0, 0, 0, 0.504662, 0, 0, 0 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="chain_placeholder" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06846, 10.2384, 0.136665 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61233, 13.998, 0.136665 )
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="chain_placeholder"]
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="SliderJoint" type="SliderJoint" parent="chain_placeholder"]
-transform = Transform( 5.76205e-08, 1, 0, -1, 5.76205e-08, 0, 0, 0, 1, -2.18883, -8.04109, -0.131461 )
+transform = Transform( 5.76205e-08, 1, 0, -1, 5.76205e-08, 0, 0, 0, 1, -2.18883, -13.3284, -0.131461 )
 nodes/node_a = NodePath("../../ball")
 nodes/node_b = NodePath("..")
-linear_limit/upper_distance = 9.0
+linear_limit/upper_distance = 14.0
+linear_limit/lower_distance = 0.0
 
 [node name="chain" type="ImmediateGeometry" parent="."]
-material_override = SubResource( 10 )
+material_override = SubResource( 9 )
