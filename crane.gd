@@ -31,7 +31,7 @@ func _physics_process(delta):
 func _process(delta):
 	
 	#draw line from chain anchor to ball
-	var ballPos = get_node("ball").global_transform.origin;
+	var ballPos = get_node("ball/RopeMountPoint").global_transform.origin;
 	var anchorPos = get_node("crane_origin/chain_anchor").global_transform.origin;
 	var chain = get_node("chain");
 	chain.clear();

@@ -107,6 +107,9 @@ transform = Transform( 0.509883, 0, 0, 0, 0.509883, 0, 0, 0, 0.509883, 0, 0.2764
 mesh = ExtResource( 3 )
 material/0 = null
 
+[node name="RopeMountPoint" type="Spatial" parent="ball"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151711, 0.743884, 0 )
+
 [node name="chain_placeholder" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61233, 13.998, 0.136665 )
 collision_layer = 2
