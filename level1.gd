@@ -10,4 +10,10 @@ func _process(delta):
 	for i in $target2.get_node("wall").get_children():
 		if(!$target2.get_node("area").overlaps_body(i.get_node("RigidBody"))):
 			score+=1;
+			
+	if(score >= 60):
+		$crane.controlsEnabled = false;
+	if(score < 60):
+		$crane.controlsEnabled = true;
+		
 	$score.text = str(score);
