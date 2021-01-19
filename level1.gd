@@ -18,4 +18,4 @@ func _process(delta):
 	if(score < 60):
 		$crane.controlsEnabled = true;
 		
-	$score.text = str(score);
+	get_node("Container/Panel/ScoreHBox/VBoxContainer/score").text = str(score) + "/60";
