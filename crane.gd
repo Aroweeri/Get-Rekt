@@ -7,7 +7,6 @@ var time_counter = 0;
 func _physics_process(delta):
 	time_counter += delta;
 	if(time_counter > 2):
-		print("Running");
 		time_counter = 0;
 		$ball.apply_impulse(Vector3(0,0,0), Vector3(0,0,0.01));
 	handleInput(delta);
