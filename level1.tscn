@@ -95,24 +95,16 @@ material/0 = null
 transform = Transform( 2.17605, 0, 0, 0, 0.2, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 6 )
 
-[node name="Container" type="Control" parent="."]
-margin_left = 68.0
-margin_top = 14.0
-margin_right = 108.0
-margin_bottom = 54.0
+[node name="Panel" type="Panel" parent="."]
+margin_left = 16.8242
+margin_top = 15.5421
+margin_right = 285.824
+margin_bottom = 134.542
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="Container"]
-margin_left = -23.0
-margin_right = 246.0
-margin_bottom = 119.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ScoreHBox" type="HBoxContainer" parent="Container/Panel"]
+[node name="ScoreHBox" type="HBoxContainer" parent="Panel"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 250.0
@@ -121,11 +113,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Container/Panel/ScoreHBox"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/ScoreHBox"]
 margin_right = 91.0
 margin_bottom = 100.0
 
-[node name="scoreLabel" type="Label" parent="Container/Panel/ScoreHBox/VBoxContainer2"]
+[node name="scoreLabel" type="Label" parent="Panel/ScoreHBox/VBoxContainer2"]
 margin_right = 91.0
 margin_bottom = 14.0
 custom_colors/font_color = Color( 0.341176, 0.701961, 1, 1 )
@@ -135,7 +127,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="controlsKeys" type="Label" parent="Container/Panel/ScoreHBox/VBoxContainer2"]
+[node name="controlsKeys" type="Label" parent="Panel/ScoreHBox/VBoxContainer2"]
 margin_top = 18.0
 margin_right = 91.0
 margin_bottom = 100.0
@@ -149,12 +141,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Container/Panel/ScoreHBox"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScoreHBox"]
 margin_left = 95.0
 margin_right = 240.0
 margin_bottom = 100.0
 
-[node name="score" type="Label" parent="Container/Panel/ScoreHBox/VBoxContainer"]
+[node name="score" type="Label" parent="Panel/ScoreHBox/VBoxContainer"]
 margin_right = 145.0
 margin_bottom = 14.0
 custom_colors/font_color = Color( 0.341176, 0.701961, 1, 1 )
@@ -163,7 +155,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="controlsActions" type="Label" parent="Container/Panel/ScoreHBox/VBoxContainer"]
+[node name="controlsActions" type="Label" parent="Panel/ScoreHBox/VBoxContainer"]
 margin_top = 18.0
 margin_right = 145.0
 margin_bottom = 100.0
@@ -173,6 +165,35 @@ Lower Ball
 Raise Ball
 Quit"
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -78.0
+margin_top = -22.0
+margin_right = 78.0
+margin_bottom = 22.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="win_label" type="Label" parent="Panel2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.0
+margin_top = -15.5
+margin_right = 69.0
+margin_bottom = 15.5
+text = "Game Over
+Press Enter to Restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }

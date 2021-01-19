@@ -1,8 +1,10 @@
 extends Spatial
 
 var score;
+var time_counter = 0;
 
 func _process(delta):
+	time_counter += delta;
 	if(Input.is_action_just_pressed("quit")):
 		get_tree().quit();
 	score = 0;
@@ -13,9 +15,10 @@ func _process(delta):
 		if(!$target2.get_node("area").overlaps_body(i.get_node("RigidBody"))):
 			score+=1;
 			
-	if(score >= 60):
+	if(score >= 60 && time_counter >= 1):
 		$crane.controlsEnabled = false;
-	if(score < 60):
-		$crane.controlsEnabled = true;
+		get_node("Panel2").visible = true;
+		if(Input.is_action_just_pressed("restart")):
+			get_tree().reload_current_scene();
 		
-	get_node("Container/Panel/ScoreHBox/VBoxContainer/score").text = str(score) + "/60";
+	get_node("Panel/ScoreHBox/VBoxContainer/score").text = str(score) + "/60";
