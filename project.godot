@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="wrecking_ball"
+config/name="Get Rekt"
 run/main_scene="res://level1.tscn"
 config/icon="res://icon.png"
 
