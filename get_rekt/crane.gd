@@ -3,6 +3,13 @@ extends Spatial
 var ball_vertical_speed = 0.04;
 var controlsEnabled = true;
 var time_counter = 0;
+var ballHeight = 0;
+var ballHeightMin = 0;
+var ballHeightMax = 13;
+var sliderPos = 14;
+var sliderPosMin = 1.5;
+var sliderPosMax = 14.5;
+var craneRotation = 0;
 
 func _physics_process(delta):
 	time_counter += delta;
@@ -13,6 +20,10 @@ func _physics_process(delta):
 			
 func _process(delta):
 	
+	get_node("crane_origin").rotation.y = craneRotation;
+	get_node("crane_origin/chain_anchor").transform.origin.x = sliderPos;
+	get_node("chain_placeholder/SliderJoint").set_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER, ballHeight);
+
 	#draw line from chain anchor to ball
 	var ballPos = get_node("ball/RopeMountPoint").global_transform.origin;
 	var anchorPos = get_node("crane_origin/chain_anchor/ChainMountPoint").global_transform.origin;
@@ -24,31 +35,31 @@ func _process(delta):
 	chain.end();
 	
 func handleInput(delta):
-	var limit;
 	var node;
 	
 	if(!controlsEnabled):
 		return;
 	
+	#adjust crane values
 	if(Input.is_action_pressed("rotate_right")):
-		get_node("crane_origin").rotate_y(-0.2*delta);
+		craneRotation -= 0.2*delta;
 	elif(Input.is_action_pressed("rotate_left")):
-		get_node("crane_origin").rotate_y(0.2*delta)
+		craneRotation += 0.2*delta;
 	if(Input.is_action_pressed("backward")):
-		node = get_node("crane_origin/chain_anchor");
-		if(node.transform.origin.x > 1.5):
-			node.translate(Vector3(-0.05,0,0));
+		sliderPos -= 0.05;
 	elif(Input.is_action_pressed("forward")):
-		node = get_node("crane_origin/chain_anchor");
-		if(node.transform.origin.x < 14.5):
-			node.translate(Vector3(0.05,0,0));
+		sliderPos += 0.05
 	if(Input.is_action_pressed("raise")):
-		node = get_node("chain_placeholder/SliderJoint");
-		limit = node.get_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER);
-		if(limit < 13.9):
-			node.set_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER, limit + ball_vertical_speed);
+		ballHeight += ball_vertical_speed;
 	elif(Input.is_action_pressed("lower")):
-		node = get_node("chain_placeholder/SliderJoint");
-		limit = node.get_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER);
-		if(limit > 0):
-			node.set_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER, limit - ball_vertical_speed);
+		ballHeight -= ball_vertical_speed;
+		
+	#correct for values past min/max
+	if(sliderPos > sliderPosMax):
+		sliderPos = sliderPosMax;
+	if(sliderPos < sliderPosMin):
+		sliderPos = sliderPosMin;
+	if(ballHeight > ballHeightMax):
+		ballHeight = ballHeightMax;
+	if(ballHeight < ballHeightMin):
+		ballHeight = ballHeightMin;
