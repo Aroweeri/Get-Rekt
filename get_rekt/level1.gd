@@ -22,3 +22,7 @@ func _process(delta):
 			get_tree().reload_current_scene();
 		
 	get_node("Panel/ScoreHBox/VBoxContainer/score").text = str(score) + "/60";
+
+
+func _on_in_bounds_area_body_exited(body):
+	body.queue_free();
