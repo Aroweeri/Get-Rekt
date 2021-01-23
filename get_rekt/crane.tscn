@@ -18,6 +18,7 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 [sub_resource type="SphereShape" id=5]
 
 [sub_resource type="SphereShape" id=6]
+radius = 0.517471
 
 [sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.337255, 0.337255, 0.337255, 1 )
@@ -78,6 +79,8 @@ material/25 = null
 
 [node name="chain_anchor" type="StaticBody" parent="crane_origin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5, 15.36, 0.145 )
+collision_layer = 0
+collision_mask = 0
 
 [node name="MeshInstance" type="MeshInstance" parent="crane_origin/chain_anchor"]
 transform = Transform( 0.201959, 0, 0, 0, 0.113524, 0, 0, 0, 0.123255, 0, 0.0855732, 0 )
@@ -98,7 +101,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110733, 0 )
 
 [node name="ball" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62893, 0.841178, 0.143428 )
-collision_mask = 0
 mass = 16.0
 
 [node name="CollisionShape" type="CollisionShape" parent="ball"]
@@ -114,18 +116,18 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151711, 0.743884, 0 )
 
 [node name="chain_placeholder" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61233, 13.998, 0.136665 )
-collision_layer = 2
-collision_mask = 2
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61233, 14.5, 0.136665 )
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="chain_placeholder"]
 shape = SubResource( 6 )
 
 [node name="SliderJoint" type="SliderJoint" parent="chain_placeholder"]
-transform = Transform( 5.76205e-08, 1, 0, -1, 5.76205e-08, 0, 0, 0, 1, -2.18883, -13.3284, -0.131461 )
+transform = Transform( 5.76205e-08, 1, 0, -1, 5.76205e-08, 0, 0, 0, 1, 0.004, -13.83, 0.023 )
 nodes/node_a = NodePath("../../ball")
 nodes/node_b = NodePath("..")
-linear_limit/upper_distance = 14.0
+linear_limit/upper_distance = 13.0
 linear_limit/lower_distance = 0.0
 
 [node name="chain" type="ImmediateGeometry" parent="."]
