@@ -32,6 +32,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87754, 0, 0 )
 [node name="Camera" type="Camera" parent="crane_origin"]
 transform = Transform( -3.25512e-08, 0.667417, -0.744684, 2.91738e-08, 0.744684, 0.667417, 1, -2.30926e-14, -4.37115e-08, 0.290118, 15.9893, -1.22906 )
 fov = 84.7
+far = 110.0
 
 [node name="cranebody" type="StaticBody" parent="crane_origin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174745, 7.02889, 0.124573 )
@@ -39,13 +40,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174745, 7.02889, 0.124573 )
 [node name="CollisionShape" type="CollisionShape" parent="crane_origin/cranebody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19547, 9.00176, 0 )
 shape = SubResource( 1 )
-
-[node name="SpotLight" type="SpotLight" parent="crane_origin/cranebody"]
-transform = Transform( 0.707107, -2.46905e-14, -0.707107, 0.707107, -6.18172e-08, 0.707107, -4.37114e-08, -1, -4.37113e-08, 2.12882, 8.0168, 0.00745649 )
-light_color = Color( 1, 0.992157, 0.803922, 1 )
-light_energy = 3.0
-shadow_enabled = true
-spot_range = 25.9628
 
 [node name="mesh" type="MeshInstance" parent="crane_origin/cranebody"]
 transform = Transform( -2.28699e-08, 0, 0.523203, 0, 0.523203, 0, -0.523203, 0, -2.28699e-08, 0.0103226, -7.10242, -0.0133069 )
