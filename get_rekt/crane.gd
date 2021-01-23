@@ -10,6 +10,8 @@ var sliderPos = 14;
 var sliderPosMin = 1.5;
 var sliderPosMax = 14.5;
 var craneRotation = 0;
+var craneRotationSpeed = 0;
+var craneRotationSpeedMax = 0.1;
 
 func _physics_process(delta):
 	time_counter += delta;
@@ -17,6 +19,11 @@ func _physics_process(delta):
 		time_counter = 0;
 		$ball.apply_impulse(Vector3(0,0,0), Vector3(0,0,0.01));
 	handleInput(delta);
+	
+	craneRotationSpeed *= 0.95;
+	craneRotation = craneRotation + craneRotationSpeed;
+
+
 			
 func _process(delta):
 	
@@ -42,9 +49,15 @@ func handleInput(delta):
 	
 	#adjust crane values
 	if(Input.is_action_pressed("rotate_right")):
-		craneRotation -= 0.2*delta;
+		craneRotationSpeed -= 0.02*delta;
+		if(craneRotationSpeed < 0-craneRotationSpeedMax):
+			craneRotationSpeed = 0-craneRotationSpeedMax;
 	elif(Input.is_action_pressed("rotate_left")):
-		craneRotation += 0.2*delta;
+		craneRotationSpeed += 0.02*delta;
+		if(craneRotationSpeed > craneRotationSpeedMax):
+			craneRotationSpeed = craneRotationSpeedMax;
+
+
 	if(Input.is_action_pressed("backward")):
 		sliderPos -= 0.05;
 	elif(Input.is_action_pressed("forward")):
