@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://ground.tres" type="Material" id=1]
 [ext_resource path="res://structure1.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=10]
 [ext_resource path="res://island/data.hterrain" type="Resource" id=11]
 [ext_resource path="res://flat_circle.obj" type="ArrayMesh" id=12]
+[ext_resource path="res://gray.tres" type="Material" id=13]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.0431373, 0.576471, 0.866667, 1 )
@@ -103,7 +104,7 @@ shape = SubResource( 6 )
 [node name="MeshInstance" type="MeshInstance" parent="target1/platform/CollisionShape"]
 transform = Transform( 1, 0, 1.49012e-08, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 7 )
-material/0 = null
+material/0 = ExtResource( 13 )
 
 [node name="target2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1466, 3.70333, -3.8548 )
@@ -126,7 +127,7 @@ shape = SubResource( 6 )
 
 [node name="MeshInstance" type="MeshInstance" parent="target2/platform/CollisionShape"]
 mesh = SubResource( 7 )
-material/0 = null
+material/0 = ExtResource( 13 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = 16.8242
