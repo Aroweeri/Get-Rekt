@@ -86,16 +86,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066864, -0.0668602, 0.02069
 [node name="target1" type="Spatial" parent="."]
 
 [node name="wall" parent="target1" instance=ExtResource( 2 )]
-transform = Transform( 0.856555, 0, -0.516055, 0, 1, 0, 0.516055, 0, 0.856555, -2.00195, 2.67973, 4.28568 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23413, 2.67973, 4.28568 )
 
 [node name="area" type="Area" parent="target1"]
-transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -2.34979, 3.40613, 4.20204 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.34979, 3.40613, 4.20204 )
 
 [node name="CollisionShape" type="CollisionShape" parent="target1/area"]
 shape = SubResource( 5 )
 
 [node name="platform" type="StaticBody" parent="target1"]
-transform = Transform( 0.875507, 0, -0.483206, 0, 1, 0, 0.483206, 0, 0.875507, -2.41853, 0.73682, 4.23925 )
+transform = Transform( 0.81161, 0, 0, 0, 1, 0, 0, 0, 0.386624, -2.41853, 0.73682, 4.23925 )
 
 [node name="CollisionShape" type="CollisionShape" parent="target1/platform"]
 transform = Transform( 2.17605, 0, 0, 0, 1.87982, 0, 5.96046e-08, 0, 1, 0, 0, 0 )
@@ -107,10 +107,10 @@ mesh = SubResource( 7 )
 material/0 = ExtResource( 13 )
 
 [node name="target2" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1466, 3.70333, -3.8548 )
+transform = Transform( 0.437555, 0, -0.899191, 0, 1, 0, 0.899191, 0, 0.437555, 1.68542, 3.70333, -5.57601 )
 
 [node name="wall" parent="target2" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.162678, 0, 0 )
 
 [node name="area" type="Area" parent="target2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07099, 0 )
@@ -119,7 +119,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07099, 0 )
 shape = SubResource( 5 )
 
 [node name="platform" type="StaticBody" parent="target2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.95361, 0 )
+transform = Transform( 0.830466, 0, 0, 0, 1, 0, 0, 0, 0.375954, 0, -2.95361, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="target2/platform"]
 transform = Transform( 2.17605, 0, 0, 0, 2.91726, 0, 0, 0, 1, 0, 0, 0 )
