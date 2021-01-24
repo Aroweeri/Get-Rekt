@@ -12,10 +12,9 @@ albedo_color = Color( 0.384314, 0.145098, 0.113725, 1 )
 [node name="RigidBody" type="RigidBody" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+transform = Transform( 0.2, 0, 0, 0, 0.15, 0, 0, 0, 0.4, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody/CollisionShape"]
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )

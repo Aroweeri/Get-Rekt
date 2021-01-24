@@ -95,7 +95,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110733, 0 )
 
 [node name="ball" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62893, 0.841178, 0.143428 )
-mass = 16.0
+mass = 4.0
 
 [node name="CollisionShape" type="CollisionShape" parent="ball"]
 transform = Transform( 0.504662, 0, 0, 0, 0.504662, 0, 0, 0, 0.504662, 0, 0, 0 )
