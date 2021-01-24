@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/flat_circle.obj-04a8b05fc4fb08432786abe360902ed6.mesh"
+
+[deps]
+
+files=[ "res://.import/flat_circle.obj-04a8b05fc4fb08432786abe360902ed6.mesh" ]
+
+source_file="res://flat_circle.obj"
+dest_files=[ "res://.import/flat_circle.obj-04a8b05fc4fb08432786abe360902ed6.mesh", "res://.import/flat_circle.obj-04a8b05fc4fb08432786abe360902ed6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

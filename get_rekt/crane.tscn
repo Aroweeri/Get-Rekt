@@ -31,8 +31,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87754, 0, 0 )
 
 [node name="Camera" type="Camera" parent="crane_origin"]
 transform = Transform( -3.25512e-08, 0.667417, -0.744684, 2.91738e-08, 0.744684, 0.667417, 1, -2.30926e-14, -4.37115e-08, 0.290118, 15.9893, -1.22906 )
-fov = 84.7
-far = 110.0
+fov = 90.0
+far = 300.0
 
 [node name="cranebody" type="StaticBody" parent="crane_origin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174745, 7.02889, 0.124573 )
