@@ -46,7 +46,7 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 [sub_resource type="CubeMesh" id=7]
 
 [sub_resource type="SphereShape" id=8]
-radius = 29.2127
+radius = 41.2588
 
 [sub_resource type="Resource" id=9]
 script = ExtResource( 10 )
@@ -293,6 +293,7 @@ __meta__ = {
 }
 
 [node name="in_bounds_area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48857, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="in_bounds_area"]
 shape = SubResource( 8 )
