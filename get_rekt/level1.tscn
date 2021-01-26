@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://ground.tres" type="Material" id=1]
 [ext_resource path="res://structure1.tscn" type="PackedScene" id=2]
@@ -13,6 +13,12 @@
 [ext_resource path="res://island/data.hterrain" type="Resource" id=11]
 [ext_resource path="res://flat_circle.obj" type="ArrayMesh" id=12]
 [ext_resource path="res://gray.tres" type="Material" id=13]
+[ext_resource path="res://rock1.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://rock_tan.tres" type="Material" id=15]
+[ext_resource path="res://rock2.obj" type="ArrayMesh" id=16]
+[ext_resource path="res://rock3.obj" type="ArrayMesh" id=17]
+[ext_resource path="res://palm_tree_1.obj" type="ArrayMesh" id=18]
+[ext_resource path="res://palm_tree_2.obj" type="ArrayMesh" id=19]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.0431373, 0.576471, 0.866667, 1 )
@@ -323,4 +329,66 @@ shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
 transform = Transform( 372.218, 0, 0, 0, 372.218, 0, 0, 0, 373.236, 0, -6.2084, 0 )
 mesh = ExtResource( 12 )
 material/0 = SubResource( 10 )
+
+[node name="rock1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7633, -5.16093, -47.3598 )
+mesh = ExtResource( 14 )
+material/0 = ExtResource( 15 )
+
+[node name="rock5" type="MeshInstance" parent="."]
+transform = Transform( 3.51958, 1.73502, 0.157747, 1.26497, -2.30051, -2.92065, 1.19794, -2.66834, 2.62061, 0.808977, -4.3238, 42.3709 )
+mesh = ExtResource( 14 )
+material/0 = ExtResource( 15 )
+
+[node name="rock2" type="MeshInstance" parent="."]
+transform = Transform( -2.91918, 0, 0, 0, -2.91918, 0, 0, 0, -2.91918, 39.3151, -4.8961, -42.9401 )
+mesh = ExtResource( 16 )
+material/0 = ExtResource( 15 )
+
+[node name="rock3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9779, -4.12275, -49.2705 )
+mesh = ExtResource( 17 )
+material/0 = ExtResource( 15 )
+
+[node name="rock4" type="MeshInstance" parent="."]
+transform = Transform( -3.98065, 0, -4.35311, 1.85381, 5.33712, -1.69519, 3.93865, -2.51203, -3.60165, -25.5507, -3.73271, -47.7454 )
+mesh = ExtResource( 17 )
+material/0 = ExtResource( 15 )
+
+[node name="palm_tree_1" type="MeshInstance" parent="."]
+transform = Transform( 0.37973, 0.0197438, -0.16536, -0.00960033, 0.413629, 0.0273407, -0.166258, 0.02121, -0.379259, 58.484, -3.52048, -24.1405 )
+mesh = ExtResource( 18 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="palm_tree_3" type="MeshInstance" parent="."]
+transform = Transform( -0.400314, -0.00214975, -0.108042, -0.00960033, 0.413629, 0.0273407, -0.107636, -0.0288974, 0.399385, 4.95544, -3.52048, -53.9543 )
+mesh = ExtResource( 18 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+
+[node name="palm_tree_2" type="MeshInstance" parent="."]
+transform = Transform( 0.304942, 0.0158552, -0.132792, -0.0532237, 0.317707, -0.0842883, -0.122688, -0.0984169, -0.29349, 56.4101, -3.49594, -20.8544 )
+mesh = ExtResource( 19 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="palm_tree_4" type="MeshInstance" parent="."]
+transform = Transform( 0.0419072, -0.0794682, -0.32063, -0.053797, 0.317243, -0.0856602, -0.325921, -0.0625826, -0.0270876, -3.61437, -4.1603, -52.2576 )
+mesh = ExtResource( 19 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="palm_tree_5" type="MeshInstance" parent="."]
+transform = Transform( 0.207949, -0.190429, 0.177113, 0.0715845, 0.259926, 0.19542, 0.250015, 0.0839661, -0.203265, 12.7217, -2.7953, -51.6996 )
+mesh = ExtResource( 19 )
+material/0 = null
+material/1 = null
+material/2 = null
 [connection signal="body_exited" from="in_bounds_area" to="." method="_on_in_bounds_area_body_exited"]
