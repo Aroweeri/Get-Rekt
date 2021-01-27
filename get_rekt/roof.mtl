@@ -1,0 +1,12 @@
+# Blender MTL File: 'roof.blend'
+# Material Count: 1
+
+newmtl Material
+Ns 39.663208
+Ka 1.000000 1.000000 1.000000
+Kd 0.130338 0.226584 0.190118
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2

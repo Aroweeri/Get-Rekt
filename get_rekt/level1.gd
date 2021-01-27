@@ -1,21 +1,28 @@
 extends Spatial
 
-var score;
+var score = 0;
+var counter;
 var time_counter = 0;
-var winscore = 120;
+var winscore = 200;
+var roofFreed = false;
 
 func _process(delta):
+	if(!roofFreed and score > 0):
+		get_node("target1/roof").queue_free();
+		roofFreed = true;
 	time_counter += delta;
 	if(Input.is_action_just_pressed("quit")):
 		get_tree().quit();
 	score = 0;
-	for i in $target1.get_node("wall").get_children():
-		if(!$target1.get_node("area").overlaps_body(i.get_node("RigidBody"))):
-			score+=1;
-	for i in $target2.get_node("wall").get_children():
-		if(!$target2.get_node("area").overlaps_body(i.get_node("RigidBody"))):
-			score+=1;
-			
+	for i in get_tree().get_nodes_in_group("walls"):
+		for j in i.get_children():
+			counter = 0;
+			for k in get_tree().get_nodes_in_group("areas"):
+				if(!k.overlaps_body(j.get_node("RigidBody"))):
+					counter+=1;
+			if(counter == 4):
+				score+=1;
+				
 	if(score >= winscore && time_counter >= 1):
 		$crane.controlsEnabled = false;
 		get_node("Panel2").visible = true;
