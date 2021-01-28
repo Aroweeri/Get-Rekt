@@ -42,7 +42,6 @@ func _process(_delta):
 	chain.end();
 	
 func handleInput(delta):
-	var node;
 	
 	if(!controlsEnabled):
 		return;
