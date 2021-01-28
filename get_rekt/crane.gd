@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 
 			
-func _process(delta):
+func _process(_delta):
 	
 	get_node("crane_origin").rotation.y = craneRotation;
 	get_node("crane_origin/chain_anchor").transform.origin.x = sliderPos;

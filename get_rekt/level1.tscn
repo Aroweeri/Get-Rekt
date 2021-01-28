@@ -44,7 +44,7 @@ data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1
 
 [sub_resource type="CubeMesh" id=4]
 
-[sub_resource type="BoxShape" id=8]
+[sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.387455, 2.0117, 2.80906 )
 
 [sub_resource type="ConvexPolygonShape" id=6]
@@ -52,18 +52,18 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 
 [sub_resource type="CubeMesh" id=7]
 
-[sub_resource type="ConvexPolygonShape" id=9]
+[sub_resource type="ConvexPolygonShape" id=8]
 points = PoolVector3Array( 2, 1.5, 0, 2, 0.5, 2, -2, 1.5, 0, -2, 0.5, 2, -2, 1.5, 0, -2, 0.5, 2, -2, 0.5, -2, 2, 0.5, -2, -2, 0.5, -2, 2, 0.5, 2, -2, 0.5, 2, 2, 1.5, 0, 2, 0.5, -2, 2, 0.5, 2, -2, 1.5, 0, -2, 0.5, -2, 2, 1.5, 0, 2, 0.5, -2 )
 
-[sub_resource type="SphereShape" id=10]
+[sub_resource type="SphereShape" id=9]
 radius = 41.2588
 
-[sub_resource type="Resource" id=11]
+[sub_resource type="Resource" id=10]
 script = ExtResource( 10 )
 mode = 0
 textures = [ [  ], [  ] ]
 
-[sub_resource type="SpatialMaterial" id=12]
+[sub_resource type="SpatialMaterial" id=11]
 flags_transparent = true
 albedo_color = Color( 0.239216, 0.792157, 0.854902, 0.623529 )
 
@@ -123,7 +123,7 @@ transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -2.65902,
 
 [node name="CollisionShape" type="CollisionShape" parent="target1/area1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0585017, 0, -0.375308 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="area2" type="Area" parent="target1" groups=[
 "areas",
@@ -132,7 +132,7 @@ transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 2.169, 2.
 
 [node name="CollisionShape" type="CollisionShape" parent="target1/area2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0585017, 0, -0.375308 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="area3" type="Area" parent="target1" groups=[
 "areas",
@@ -141,7 +141,7 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.077, 
 
 [node name="CollisionShape" type="CollisionShape" parent="target1/area3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0585017, 0, -0.375308 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="area4" type="Area" parent="target1" groups=[
 "areas",
@@ -150,7 +150,7 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.077, 
 
 [node name="CollisionShape" type="CollisionShape" parent="target1/area4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0585017, 0, -0.375308 )
-shape = SubResource( 8 )
+shape = SubResource( 5 )
 
 [node name="platform" type="StaticBody" parent="target1"]
 transform = Transform( 1.028, 0, 0, 0, 1, 0, 0, 0, 2.606, -0.335, -2.862, 0.049 )
@@ -173,7 +173,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="target1/roof"]
 transform = Transform( 1.78814e-07, 0, 1.571, 0, 1.076, 0, -1.491, 0, -5.96046e-08, -0.386002, 3.39013, 0.318 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = 16.8242
@@ -342,7 +342,7 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48857, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="in_bounds_area"]
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 
 [node name="HTerrain" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -125, 0, -125 )
@@ -358,7 +358,7 @@ collision_mask = 1
 shader_type = "Classic4Lite"
 custom_shader = null
 custom_globalmap_shader = null
-texture_set = SubResource( 11 )
+texture_set = SubResource( 10 )
 shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = false
@@ -367,7 +367,7 @@ shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
 [node name="flat_circle" type="MeshInstance" parent="."]
 transform = Transform( 372.218, 0, 0, 0, 372.218, 0, 0, 0, 373.236, 0, -6.2084, 0 )
 mesh = ExtResource( 12 )
-material/0 = SubResource( 12 )
+material/0 = SubResource( 11 )
 
 [node name="rock1" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7633, -5.16093, -47.3598 )

@@ -7,5 +7,5 @@ func _ready():
 	min_value = target.sliderPosMin;
 	max_value = target.sliderPosMax;
 
-func _process(delta):
+func _process(_delta):
 	value = target.sliderPos;

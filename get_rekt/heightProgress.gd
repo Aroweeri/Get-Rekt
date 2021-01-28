@@ -7,5 +7,5 @@ func _ready():
 	min_value = target.ballHeightMin;
 	max_value = target.ballHeightMax;
 
-func _process(delta):
+func _process(_delta):
 	value = target.ballHeight;
