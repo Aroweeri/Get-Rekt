@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pit.obj-ee1aae53291159500c0ea47379a20d72.mesh"
+
+[deps]
+
+files=[ "res://.import/pit.obj-ee1aae53291159500c0ea47379a20d72.mesh" ]
+
+source_file="res://pit.obj"
+dest_files=[ "res://.import/pit.obj-ee1aae53291159500c0ea47379a20d72.mesh", "res://.import/pit.obj-ee1aae53291159500c0ea47379a20d72.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true
