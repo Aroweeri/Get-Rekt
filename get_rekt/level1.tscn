@@ -1,14 +1,11 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://pit.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://structure1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://crane.tscn" type="PackedScene" id=3]
 [ext_resource path="res://level1.gd" type="Script" id=4]
-[ext_resource path="res://heightProgress.gd" type="Script" id=5]
-[ext_resource path="res://sliderProgress.gd" type="Script" id=6]
+[ext_resource path="res://ui.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=7]
-[ext_resource path="res://progressBarBGStyle.tres" type="StyleBox" id=8]
-[ext_resource path="res://progressBarFGStyle.tres" type="StyleBox" id=9]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=10]
 [ext_resource path="res://island/data.hterrain" type="Resource" id=11]
 [ext_resource path="res://flat_circle.obj" type="ArrayMesh" id=12]
@@ -156,169 +153,6 @@ material/0 = null
 transform = Transform( 1.78814e-07, 0, 1.571, 0, 1.076, 0, -1.491, 0, -5.96046e-08, -0.386002, 3.39013, 0.318 )
 shape = SubResource( 5 )
 
-[node name="Panel" type="Panel" parent="."]
-margin_left = 16.8242
-margin_top = 15.5421
-margin_right = 285.824
-margin_bottom = 134.542
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ScoreHBox" type="HBoxContainer" parent="Panel"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 250.0
-margin_bottom = 24.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/ScoreHBox"]
-margin_right = 91.0
-margin_bottom = 100.0
-
-[node name="scoreLabel" type="Label" parent="Panel/ScoreHBox/VBoxContainer2"]
-margin_right = 91.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0.341176, 0.701961, 1, 1 )
-text = "Score"
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="controlsKeys" type="Label" parent="Panel/ScoreHBox/VBoxContainer2"]
-margin_top = 18.0
-margin_right = 91.0
-margin_bottom = 100.0
-text = "W/S
-A/E
-Mouse Left
-Mouse Right
-Esc"
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScoreHBox"]
-margin_left = 95.0
-margin_right = 240.0
-margin_bottom = 100.0
-
-[node name="score" type="Label" parent="Panel/ScoreHBox/VBoxContainer"]
-margin_right = 145.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0.341176, 0.701961, 1, 1 )
-text = "0/0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="controlsActions" type="Label" parent="Panel/ScoreHBox/VBoxContainer"]
-margin_top = 18.0
-margin_right = 145.0
-margin_bottom = 100.0
-text = "Forward/Backward
-Left/Right
-Lower Ball
-Raise Ball
-Quit"
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel2" type="Panel" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -78.0
-margin_top = -22.0
-margin_right = 78.0
-margin_bottom = 22.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="win_label" type="Label" parent="Panel2"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -69.0
-margin_top = -15.5
-margin_right = 69.0
-margin_bottom = 15.5
-text = "You Win!
-Press Enter to Restart"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel3" type="Panel" parent="."]
-margin_left = 301.0
-margin_top = 16.0
-margin_right = 668.0
-margin_bottom = 67.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="heightProgress" type="ProgressBar" parent="Panel3"]
-margin_left = 85.0
-margin_top = 9.5421
-margin_right = 356.0
-margin_bottom = 23.5421
-custom_styles/fg = ExtResource( 9 )
-custom_styles/bg = ExtResource( 8 )
-max_value = 14.0
-value = 7.0
-percent_visible = false
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="sliderProgress" type="ProgressBar" parent="Panel3"]
-margin_left = 85.0
-margin_top = 25.5421
-margin_right = 356.0
-margin_bottom = 39.5421
-custom_styles/fg = ExtResource( 9 )
-custom_styles/bg = ExtResource( 8 )
-min_value = 1.5
-max_value = 14.5
-value = 14.5
-percent_visible = false
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="height" type="Label" parent="Panel3"]
-margin_left = 10.5
-margin_top = 9.5421
-margin_right = 50.5
-margin_bottom = 23.5421
-text = "Height"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="slider" type="Label" parent="Panel3"]
-margin_left = 10.5
-margin_top = 25.5421
-margin_right = 52.5
-margin_bottom = 39.5421
-text = "Slider Pos"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="in_bounds_area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48857, 0, 0 )
 
@@ -408,5 +242,7 @@ mesh = ExtResource( 19 )
 material/0 = null
 material/1 = null
 material/2 = null
+
+[node name="ui" parent="." instance=ExtResource( 5 )]
 
 [connection signal="body_exited" from="in_bounds_area" to="." method="_on_in_bounds_area_body_exited"]
