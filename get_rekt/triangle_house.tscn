@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://triangle_roof.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://triangle_pit.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://structure1.tscn" type="PackedScene" id=3]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.387455, 2.0117, 2.80906 )
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 1.5148, 2.2645, 0.8745, 1.5148, -0.0181, 0.8745, -1.5148, 2.2645, 0.8745, -1.5148, 2.2645, 0.8745, 1.5148, -0.0181, 0.8745, -1.5148, -0.0181, 0.8745, 1.5148, -0.0181, 0.8745, 0, -0.0181, -1.7491, -1.5148, -0.0181, 0.8745, -1.5148, 2.2645, 0.8745, -1.5148, -0.0181, 0.8745, 0, 2.2645, -1.7491, 0, 2.2645, -1.7491, -1.5148, -0.0181, 0.8745, 0, -0.0181, -1.7491, 0, 2.2645, -1.2369, 0, 2.2645, -1.2369, 1.0712, 2.2645, 0.6185, 1.0712, 2.2645, 0.6185, 0, 2.2645, -1.2369, 1.0712, 2.2645, 0.6185, 0, 2.2645, -1.7491, 0, -0.0181, -1.7491, 1.5148, 2.2645, 0.8745, 1.5148, 2.2645, 0.8745, 0, -0.0181, -1.7491, 1.5148, -0.0181, 0.8745, 0, 2.2645, -1.7491, 0, 2.2645, -1.2369, -1.5148, 2.2645, 0.8745, -1.5148, 2.2645, 0.8745, 0, 2.2645, -1.2369, -1.0712, 2.2645, 0.6185, -1.5148, 2.2645, 0.8745, -1.0712, 2.2645, 0.6185, 1.5148, 2.2645, 0.8745, 1.5148, 2.2645, 0.8745, -1.0712, 2.2645, 0.6185, 1.0712, 2.2645, 0.6185, 1.5148, 2.2645, 0.8745, 1.0712, 2.2645, 0.6185, 0, 2.2645, -1.7491, 0, 2.2645, -1.7491, 1.0712, 2.2645, 0.6185, 0, 2.2645, -1.2369, 0, 0.2656, -1.2369, 0, 2.2645, -1.2369, 1.0712, 0.2656, 0.6185, 1.0712, 0.2656, 0.6185, 0, 2.2645, -1.2369, 1.0712, 2.2645, 0.6185, 1.0712, 2.2645, 0.6185, 1.0712, 2.2645, 0.6185, -1.0712, 2.2645, 0.6185, -1.0712, 2.2645, 0.6185, 1.0712, 2.2645, 0.6185, -1.0712, 2.2645, 0.6185, -1.0712, 2.2645, 0.6185, -1.0712, 2.2645, 0.6185, 0, 2.2645, -1.2369, 0, 2.2645, -1.2369, -1.0712, 2.2645, 0.6185, 0, 2.2645, -1.2369, -1.0712, 0.2656, 0.6185, 0, 0.2656, -1.2369, 1.0712, 0.2656, 0.6185, 1.0712, 0.2656, 0.6185, 1.0712, 2.2645, 0.6185, -1.0712, 0.2656, 0.6185, -1.0712, 0.2656, 0.6185, 1.0712, 2.2645, 0.6185, -1.0712, 2.2645, 0.6185, -1.0712, 0.2656, 0.6185, -1.0712, 2.2645, 0.6185, 0, 0.2656, -1.2369, 0, 0.2656, -1.2369, -1.0712, 2.2645, 0.6185, 0, 2.2645, -1.2369 )
+
+[sub_resource type="CylinderShape" id=3]
+radius = 2.94486
+height = 0.458601
+
+[node name="target1" type="Spatial"]
+transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
+
+[node name="wall" parent="." groups=[
+"walls",
+] instance=ExtResource( 3 )]
+transform = Transform( 0.615875, 0, 1.06673, 0, 1.23175, 0, -1.06673, 0, 0.615875, -0.541769, 0.234955, -1.64131 )
+
+[node name="wall2" parent="." groups=[
+"walls",
+] instance=ExtResource( 3 )]
+transform = Transform( 0.615875, 0, -1.06673, 0, 1.23175, 0, 1.06673, 0, 0.615875, 2.20028, 0.244, 2.2568 )
+
+[node name="wall3" parent="." groups=[
+"walls",
+] instance=ExtResource( 3 )]
+transform = Transform( -1.23175, 0, -4.01357e-07, 0, 1.23175, 0, 4.01357e-07, 0, -1.23175, -2.546, 0.244, 2.652 )
+
+[node name="area1" type="Area" parent="." groups=[
+"areas",
+]]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -1.82558, 2.02755, 0.672934 )
+
+[node name="CollisionShape" type="CollisionShape" parent="area1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0585017, 0, -0.375308 )
+shape = SubResource( 1 )
+
+[node name="area2" type="Area" parent="." groups=[
+"areas",
+]]
+transform = Transform( 0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 1.32144, 2.028, 0.57363 )
+
+[node name="CollisionShape" type="CollisionShape" parent="area2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0585017, 0, -0.375308 )
+shape = SubResource( 1 )
+
+[node name="area3" type="Area" parent="." groups=[
+"areas",
+]]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0.077, 2.028, 2.529 )
+
+[node name="CollisionShape" type="CollisionShape" parent="area3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0585017, 0, -0.375308 )
+shape = SubResource( 1 )
+
+[node name="platform" type="StaticBody" parent="."]
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.304379, -4.63326, 1.07686 )
+
+[node name="triangle_pit" type="MeshInstance" parent="platform"]
+transform = Transform( 2.08012, 0, 0, 0, 2.08012, 0, 0, 0, 2.08012, 0, 0, 0 )
+mesh = ExtResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="platform"]
+transform = Transform( 2.08012, 0, 0, 0, 2.08012, 0, 0, 0, 2.08012, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="roof" type="RigidBody" parent="."]
+transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.216665, 4.13013, 1.12701 )
+
+[node name="MeshInstance" type="MeshInstance" parent="roof"]
+transform = Transform( 2.26116, 0, 6.73877e-08, 0, 2.26116, 0, -6.73877e-08, 0, 2.26116, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="roof"]
+shape = SubResource( 3 )

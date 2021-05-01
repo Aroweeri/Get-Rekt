@@ -3,7 +3,7 @@ extends Spatial
 var score = 0;
 var counter;
 var time_counter = 0;
-var winscore = 140;
+var winscore = 210;
 var roofFreed = false;
 
 func _process(delta):
