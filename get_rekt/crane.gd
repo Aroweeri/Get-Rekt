@@ -32,8 +32,8 @@ func _process(_delta):
 	get_node("chain_placeholder/SliderJoint").set_param(SliderJoint.PARAM_LINEAR_LIMIT_LOWER, ballHeight);
 
 	#draw line from chain anchor to ball
-	var ballPos = get_node("ball/RopeMountPoint").global_transform.origin;
-	var anchorPos = get_node("crane_origin/chain_anchor/ChainMountPoint").global_transform.origin;
+	var ballPos = get_node("ball/RopeMountPoint").global_transform.origin - get_node(".").transform.origin;
+	var anchorPos = get_node("crane_origin/chain_anchor/ChainMountPoint").global_transform.origin - get_node(".").transform.origin;
 	var chain = get_node("chain");
 	chain.clear();
 	chain.begin(Mesh.PRIMITIVE_LINES);
