@@ -27,7 +27,6 @@ albedo_color = Color( 0.337255, 0.337255, 0.337255, 1 )
 script = ExtResource( 2 )
 
 [node name="crane_origin" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87754, 0, 0 )
 
 [node name="Camera" type="Camera" parent="crane_origin"]
 transform = Transform( -3.25512e-08, 0.667417, -0.744684, 2.91738e-08, 0.744684, 0.667417, 1, -2.30926e-14, -4.37115e-08, 0.290118, 15.9893, -1.22906 )
@@ -94,7 +93,7 @@ nodes/node_b = NodePath("../../../chain_placeholder")
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110733, 0 )
 
 [node name="ball" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.62893, 0.841178, 0.143428 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.507, 0.841, 0.143 )
 mass = 4.0
 
 [node name="CollisionShape" type="CollisionShape" parent="ball"]
@@ -110,7 +109,7 @@ material/0 = null
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151711, 0.743884, 0 )
 
 [node name="chain_placeholder" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61233, 14.5, 0.136665 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.507, 14.5, 0.137 )
 collision_layer = 0
 collision_mask = 0
 
