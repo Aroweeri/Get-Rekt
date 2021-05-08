@@ -27,8 +27,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Get Rekt"
-run/main_scene="res://level1.tscn"
+run/main_scene="res://island_level.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Util="*res://util.gd"
 
 [display]
 
@@ -36,7 +40,7 @@ window/size/fullscreen=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "zylann.hterrain" )
+enabled=PoolStringArray( "res://addons/zylann.hterrain/plugin.cfg" )
 
 [input]
 

@@ -25,11 +25,11 @@ func _process(delta):
 				
 	if(score >= winscore && time_counter >= 1):
 		$crane.controlsEnabled = false;
-		get_node("Panel2").visible = true;
+		get_node("ui/win_ui").visible = true;
 		if(Input.is_action_just_pressed("restart")):
 			get_tree().reload_current_scene();
 		
-	get_node("Panel/ScoreHBox/VBoxContainer/score").text = str(score) + "/" + str(winscore);
+	get_node("ui/controls_ui/ScoreHBox/VBoxContainer/score").text = str(score) + "/" + str(winscore);
 
 
 func _on_in_bounds_area_body_exited(body):

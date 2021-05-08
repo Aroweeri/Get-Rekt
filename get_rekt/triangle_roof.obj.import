@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/triangle_roof.obj-cce9fd51e08a98fcccbe39d87a277d5a.mesh"
+
+[deps]
+
+files=[ "res://.import/triangle_roof.obj-cce9fd51e08a98fcccbe39d87a277d5a.mesh" ]
+
+source_file="res://triangle_roof.obj"
+dest_files=[ "res://.import/triangle_roof.obj-cce9fd51e08a98fcccbe39d87a277d5a.mesh", "res://.import/triangle_roof.obj-cce9fd51e08a98fcccbe39d87a277d5a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

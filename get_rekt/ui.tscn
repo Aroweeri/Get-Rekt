@@ -1,0 +1,176 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://progressBarFGStyle.tres" type="StyleBox" id=1]
+[ext_resource path="res://sliderProgress.gd" type="Script" id=2]
+[ext_resource path="res://heightProgress.gd" type="Script" id=3]
+[ext_resource path="res://progressBarBGStyle.tres" type="StyleBox" id=4]
+
+[node name="ui" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controls_ui" type="Panel" parent="."]
+margin_left = 16.8242
+margin_top = 15.5421
+margin_right = 285.824
+margin_bottom = 134.542
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreHBox" type="HBoxContainer" parent="controls_ui"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 250.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="controls_ui/ScoreHBox"]
+margin_right = 91.0
+margin_bottom = 100.0
+
+[node name="scoreLabel" type="Label" parent="controls_ui/ScoreHBox/VBoxContainer2"]
+margin_right = 91.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.341176, 0.701961, 1, 1 )
+text = "Score"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controlsKeys" type="Label" parent="controls_ui/ScoreHBox/VBoxContainer2"]
+margin_top = 18.0
+margin_right = 91.0
+margin_bottom = 100.0
+text = "W/S
+A/E
+Mouse Left
+Mouse Right
+Esc"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controls_ui/ScoreHBox"]
+margin_left = 95.0
+margin_right = 240.0
+margin_bottom = 100.0
+
+[node name="score" type="Label" parent="controls_ui/ScoreHBox/VBoxContainer"]
+margin_right = 145.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 0.341176, 0.701961, 1, 1 )
+text = "0/0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controlsActions" type="Label" parent="controls_ui/ScoreHBox/VBoxContainer"]
+margin_top = 18.0
+margin_right = 145.0
+margin_bottom = 100.0
+text = "Forward/Backward
+Left/Right
+Lower Ball
+Raise Ball
+Quit"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="win_ui" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 414.0
+margin_top = 258.0
+margin_right = 570.0
+margin_bottom = 302.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="win_label" type="Label" parent="win_ui"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.0
+margin_top = -15.5
+margin_right = 69.0
+margin_bottom = 15.5
+text = "You Win!
+Press Enter to Restart"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="crane_ui" type="Panel" parent="."]
+margin_left = 301.0
+margin_top = 16.0
+margin_right = 668.0
+margin_bottom = 67.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="heightProgress" type="ProgressBar" parent="crane_ui"]
+margin_left = 85.0
+margin_top = 9.5421
+margin_right = 356.0
+margin_bottom = 23.5421
+custom_styles/fg = ExtResource( 1 )
+custom_styles/bg = ExtResource( 4 )
+max_value = 14.0
+value = 7.0
+percent_visible = false
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sliderProgress" type="ProgressBar" parent="crane_ui"]
+margin_left = 85.0
+margin_top = 25.5421
+margin_right = 356.0
+margin_bottom = 39.5421
+custom_styles/fg = ExtResource( 1 )
+custom_styles/bg = ExtResource( 4 )
+min_value = 1.5
+max_value = 14.5
+value = 14.5
+percent_visible = false
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="height" type="Label" parent="crane_ui"]
+margin_left = 10.5
+margin_top = 9.5421
+margin_right = 50.5
+margin_bottom = 23.5421
+text = "Height"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="slider" type="Label" parent="crane_ui"]
+margin_left = 10.5
+margin_top = 25.5421
+margin_right = 52.5
+margin_bottom = 39.5421
+text = "Slider Pos"
+__meta__ = {
+"_edit_use_anchors_": false
+}
