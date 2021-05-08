@@ -30,6 +30,10 @@ config/name="Get Rekt"
 run/main_scene="res://island_level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Util="*res://util.gd"
+
 [display]
 
 window/size/fullscreen=true

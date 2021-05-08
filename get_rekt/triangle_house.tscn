@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://triangle_roof.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://triangle_pit.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://structure1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://triangle_house.gd" type="Script" id=4]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.387455, 2.0117, 2.80906 )
@@ -16,6 +17,7 @@ height = 0.458601
 
 [node name="target1" type="Spatial"]
 transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
+script = ExtResource( 4 )
 
 [node name="wall" parent="." groups=[
 "walls",
