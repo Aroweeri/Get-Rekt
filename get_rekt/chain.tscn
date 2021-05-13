@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.282353, 0.282353, 0.282353, 1 )
+
+[node name="chain" type="ImmediateGeometry"]
+material_override = SubResource( 6 )

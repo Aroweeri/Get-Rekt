@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://crane2.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://crane.gd" type="Script" id=2]
@@ -20,10 +20,8 @@ points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1,
 [sub_resource type="SphereShape" id=6]
 radius = 0.517471
 
-[sub_resource type="SpatialMaterial" id=7]
-albedo_color = Color( 0.337255, 0.337255, 0.337255, 1 )
-
 [node name="crane" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="crane_origin" type="Spatial" parent="."]
@@ -100,7 +98,7 @@ mass = 4.0
 transform = Transform( 0.504662, 0, 0, 0, 0.504662, 0, 0, 0, 0.504662, 0, 0, 0 )
 shape = SubResource( 5 )
 
-[node name="ball2" type="MeshInstance" parent="ball"]
+[node name="MeshInstance" type="MeshInstance" parent="ball"]
 transform = Transform( 0.509883, 0, 0, 0, 0.509883, 0, 0, 0, 0.509883, 0, 0.276428, 0 )
 mesh = ExtResource( 3 )
 material/0 = null
@@ -122,6 +120,3 @@ nodes/node_a = NodePath("../../ball")
 nodes/node_b = NodePath("..")
 linear_limit/upper_distance = 13.0
 linear_limit/lower_distance = 0.0
-
-[node name="chain" type="ImmediateGeometry" parent="."]
-material_override = SubResource( 7 )
