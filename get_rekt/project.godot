@@ -27,16 +27,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Get Rekt"
-run/main_scene="res://island_level.tscn"
+run/main_scene="res://main_menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Util="*res://util.gd"
-
-[display]
-
-window/size/fullscreen=true
 
 [editor_plugins]
 

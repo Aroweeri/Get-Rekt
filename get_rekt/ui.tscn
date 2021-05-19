@@ -94,7 +94,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 414.0
 margin_top = 258.0
-margin_right = 570.0
+margin_right = 639.0
 margin_bottom = 302.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,12 +105,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -69.0
-margin_top = -15.5
-margin_right = 69.0
-margin_bottom = 15.5
+margin_left = -102.5
+margin_top = -14.0
+margin_right = 103.5
+margin_bottom = 19.0
 text = "You Win!
-Press Enter to Restart"
+Press Enter to Return to Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
