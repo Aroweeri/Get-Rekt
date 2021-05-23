@@ -12,7 +12,7 @@ func _process(delta):
 		roofFreed = true;
 	time_counter += delta;
 	if(Input.is_action_just_pressed("quit")):
-		get_tree().quit();
+		get_tree().change_scene("res://main_menu.tscn");
 	score = 0;
 	for i in get_tree().get_nodes_in_group("walls"):
 		for j in i.get_children():
@@ -27,7 +27,7 @@ func _process(delta):
 		$crane.controlsEnabled = false;
 		get_node("ui/win_ui").visible = true;
 		if(Input.is_action_just_pressed("restart")):
-			get_tree().reload_current_scene();
+			get_tree().change_scene("res://main_menu.tscn")
 		
 	get_node("ui/controls_ui/ScoreHBox/VBoxContainer/score").text = str(score) + "/" + str(winscore);
 

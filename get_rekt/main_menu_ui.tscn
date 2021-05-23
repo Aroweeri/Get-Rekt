@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://main_menu_ui.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Noto_Sans_TC/NotoSansTC-Black.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 124
+font_data = SubResource( 1 )
+
+[node name="ui" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+anchor_right = 0.516
+margin_right = 59.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 2 )
+text = "Get Rekt!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="island_load_button" type="Button" parent="."]
+anchor_left = 0.032
+anchor_top = 0.575
+anchor_right = 0.032
+anchor_bottom = 0.575
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Island"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="volcano_load_button" type="Button" parent="."]
+anchor_left = 0.032
+anchor_top = 0.575
+anchor_right = 0.032
+anchor_bottom = 0.575
+margin_top = 28.0757
+margin_right = 62.0
+margin_bottom = 48.0757
+text = "Volcano"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="snow_load_button" type="Button" parent="."]
+anchor_left = 0.032
+anchor_top = 0.575
+anchor_right = 0.032
+anchor_bottom = 0.575
+margin_top = 54.5624
+margin_right = 45.0
+margin_bottom = 74.5624
+text = "Snow"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit_button" type="Button" parent="."]
+anchor_left = 0.032
+anchor_top = 0.575
+anchor_right = 0.032
+anchor_bottom = 0.575
+margin_top = 86.671
+margin_right = 45.0
+margin_bottom = 106.671
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="island_load_button" to="." method="_on_island_load_button_pressed"]
+[connection signal="pressed" from="volcano_load_button" to="." method="_on_volcano_load_button_pressed"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
