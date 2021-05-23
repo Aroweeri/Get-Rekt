@@ -20,7 +20,7 @@ func _process(delta):
 			for k in get_tree().get_nodes_in_group("areas"):
 				if(!k.overlaps_body(j.get_node("RigidBody"))):
 					counter+=1;
-			if(counter == 4):
+			if(counter == 1):
 				score+=1;
 				
 	if(score >= winscore && time_counter >= 1):
