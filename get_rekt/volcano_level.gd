@@ -35,7 +35,7 @@ func _process(delta):
 				for l in areas:
 					if(!l.overlaps_body(k.get_node("RigidBody"))):
 						counter+=1;
-				if(counter == 3):
+				if(counter == 1):
 					i.score+=1;
 
 	if(score >= winscore && time_counter >= 1):
