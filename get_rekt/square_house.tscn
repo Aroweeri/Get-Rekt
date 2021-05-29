@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://roof.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://pit.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://structure1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://house.gd" type="Script" id=4]
 
-[sub_resource type="CylinderShape" id=4]
+[sub_resource type="CylinderShape" id=1]
 radius = 3.9836
 height = 4.10547
 
@@ -16,6 +17,7 @@ points = PoolVector3Array( 2, 1.5, 0, 2, 0.5, 2, -2, 1.5, 0, -2, 0.5, 2, -2, 1.5
 
 [node name="target1" type="Spatial"]
 transform = Transform( 0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 0, 0 )
+script = ExtResource( 4 )
 
 [node name="wall" parent="." groups=[
 "walls",
@@ -44,7 +46,7 @@ transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.198684
 
 [node name="CollisionShape" type="CollisionShape" parent="area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0585017, 0, -0.375308 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="platform" type="StaticBody" parent="."]
 transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.335, -3.03194, 0.0489998 )
