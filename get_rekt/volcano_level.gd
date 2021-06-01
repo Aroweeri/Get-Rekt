@@ -1,5 +1,9 @@
 extends Spatial
 
+func _ready():
+	for i in get_tree().get_nodes_in_group("targets"):
+		i.winscore = 97;
+
 func _process(delta):
 	var scores = 0
 	var numDestroyed = 0;

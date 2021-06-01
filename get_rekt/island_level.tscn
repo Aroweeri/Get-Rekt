@@ -68,6 +68,8 @@ transform = Transform( 0.923135, 0, 0.384472, 0, 1, 0, -0.384472, 0, 0.923135, -
 
 [node name="in_bounds_area" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48857, 0, 0 )
+visible = false
+collision_mask = 5
 
 [node name="CollisionShape" type="CollisionShape" parent="in_bounds_area"]
 shape = SubResource( 3 )
