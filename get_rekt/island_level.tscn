@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=1]
 [ext_resource path="res://rock2.obj" type="ArrayMesh" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://rock1.obj" type="ArrayMesh" id=12]
 [ext_resource path="res://palm_tree_2.obj" type="ArrayMesh" id=13]
 [ext_resource path="res://chain.tscn" type="PackedScene" id=14]
+[ext_resource path="res://music/boon.ogg" type="AudioStream" id=15]
 [ext_resource path="res://flat_circle.obj" type="ArrayMesh" id=16]
 
 [sub_resource type="ProceduralSky" id=1]
@@ -161,5 +162,8 @@ material/2 = null
 [node name="ui" parent="." instance=ExtResource( 6 )]
 
 [node name="chain" parent="." instance=ExtResource( 14 )]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
 
 [connection signal="body_exited" from="in_bounds_area" to="." method="_on_in_bounds_area_body_exited"]

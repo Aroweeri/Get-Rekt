@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/morph.ogg-cf404e5296024d25c2d68309e3d603e2.oggstr"
+
+[deps]
+
+source_file="res://music/morph.ogg"
+dest_files=[ "res://.import/morph.ogg-cf404e5296024d25c2d68309e3d603e2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

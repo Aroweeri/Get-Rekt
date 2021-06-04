@@ -3,6 +3,7 @@ extends Spatial
 func _ready():
 	for i in get_tree().get_nodes_in_group("targets"):
 		i.winscore = 97;
+	get_node("music").play();
 
 func _process(delta):
 	var scores = 0
