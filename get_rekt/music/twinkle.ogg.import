@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/twinkle.ogg-93aa9dadaf6c6c09d9c38fd67b9eeddd.oggstr"
+
+[deps]
+
+source_file="res://music/twinkle.ogg"
+dest_files=[ "res://.import/twinkle.ogg-93aa9dadaf6c6c09d9c38fd67b9eeddd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
