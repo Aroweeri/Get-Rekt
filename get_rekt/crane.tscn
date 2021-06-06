@@ -4,7 +4,7 @@
 [ext_resource path="res://crane.gd" type="Script" id=2]
 [ext_resource path="res://ball.obj" type="ArrayMesh" id=3]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 8.68859, 0.467903, 0.434465 )
 
 [sub_resource type="CubeMesh" id=2]
@@ -35,7 +35,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.174745, 7.02889, 0.124573 )
 
 [node name="CollisionShape" type="CollisionShape" parent="crane_origin/cranebody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19547, 9.00176, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
 [node name="mesh" type="MeshInstance" parent="crane_origin/cranebody"]
 transform = Transform( -2.28699e-08, 0, 0.523203, 0, 0.523203, 0, -0.523203, 0, -2.28699e-08, 0.0103226, -7.10242, -0.0133069 )

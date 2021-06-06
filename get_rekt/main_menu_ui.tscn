@@ -80,4 +80,5 @@ __meta__ = {
 
 [connection signal="pressed" from="island_load_button" to="." method="_on_island_load_button_pressed"]
 [connection signal="pressed" from="volcano_load_button" to="." method="_on_volcano_load_button_pressed"]
+[connection signal="pressed" from="snow_load_button" to="." method="_on_snow_load_button_pressed"]
 [connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
