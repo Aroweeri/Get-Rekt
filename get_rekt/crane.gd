@@ -13,6 +13,13 @@ var craneRotation = 0;
 var craneRotationSpeed = 0;
 var craneRotationSpeedMax = 0.1;
 
+var anchorPlayer;
+var rotatePlayer;
+var spinUpPlayer;
+var spinPlayer;
+var spinDownPlayer;
+
+
 func _physics_process(delta):
 	time_counter += delta;
 	if(time_counter > 2):
@@ -24,7 +31,6 @@ func _physics_process(delta):
 	craneRotation = craneRotation + craneRotationSpeed;
 
 
-			
 func _process(_delta):
 	
 	get_node("crane_origin").rotation.y = craneRotation;
@@ -46,6 +52,19 @@ func handleInput(delta):
 	
 	if(!controlsEnabled):
 		return;
+		
+	if(Input.is_action_just_pressed("raise")):
+		$spinSound.play();
+	if(Input.is_action_just_pressed("lower")):
+		$spinSound.play();
+	if(Input.is_action_just_pressed("rotate_right")):
+		$rotateSound.play();
+	if(Input.is_action_just_pressed("rotate_left")):
+		$rotateSound.play();
+	if(Input.is_action_just_pressed("backward")):
+		$anchorSound.play();
+	if(Input.is_action_just_pressed("forward")):
+		$anchorSound.play();
 	
 	#adjust crane values
 	if(Input.is_action_pressed("rotate_right")):
@@ -57,7 +76,6 @@ func handleInput(delta):
 		if(craneRotationSpeed > craneRotationSpeedMax):
 			craneRotationSpeed = craneRotationSpeedMax;
 
-
 	if(Input.is_action_pressed("backward")):
 		sliderPos -= 0.05;
 	elif(Input.is_action_pressed("forward")):
@@ -66,6 +84,21 @@ func handleInput(delta):
 		ballHeight += ball_vertical_speed;
 	elif(Input.is_action_pressed("lower")):
 		ballHeight -= ball_vertical_speed;
+		
+	if(Input.is_action_just_released("raise")):
+		$spinSound.stop();
+		$spinDownSound.play();
+	if(Input.is_action_just_released("lower")):
+		$spinSound.stop();
+		$spinDownSound.play();
+	if(Input.is_action_just_released("rotate_right")):
+		$rotateSound.stop();
+	if(Input.is_action_just_released("rotate_left")):
+		$rotateSound.stop();
+	if(Input.is_action_just_released("backward")):
+		$anchorSound.stop();
+	if(Input.is_action_just_released("forward")):
+		$anchorSound.stop();
 		
 	#correct for values past min/max
 	if(sliderPos > sliderPosMax):
