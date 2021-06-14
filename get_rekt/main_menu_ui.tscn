@@ -1,13 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://main_menu_ui.gd" type="Script" id=1]
+[ext_resource path="res://roboto_font.tres" type="DynamicFont" id=2]
 
-[sub_resource type="DynamicFontData" id=1]
-font_path = "res://Noto_Sans_TC/NotoSansTC-Black.otf"
-
-[sub_resource type="DynamicFont" id=2]
-size = 124
-font_data = SubResource( 1 )
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.309804, 0.501961, 0.521569, 1 )
 
 [node name="ui" type="Control"]
 margin_right = 1024.0
@@ -17,68 +14,105 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="title" type="Label" parent="."]
-anchor_right = 0.516
-margin_right = 59.0
-margin_bottom = 14.0
-custom_fonts/font = SubResource( 2 )
+[node name="Panel3" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Panel3"]
+margin_left = 134.929
+margin_top = 96.8315
+margin_right = 887.929
+margin_bottom = 304.831
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel3/Panel"]
+margin_right = 753.0
+margin_bottom = 208.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="Panel3/Panel/CenterContainer"]
+margin_left = 52.0
+margin_top = 24.0
+margin_right = 700.0
+margin_bottom = 183.0
+custom_fonts/font = ExtResource( 2 )
 text = "Get Rekt!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="island_load_button" type="Button" parent="."]
-anchor_left = 0.032
-anchor_top = 0.575
-anchor_right = 0.032
-anchor_bottom = 0.575
-margin_right = 12.0
+[node name="Panel2" type="Panel" parent="Panel3"]
+margin_left = 134.929
+margin_top = 344.831
+margin_right = 887.929
+margin_bottom = 433.831
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="quit_button" type="Button" parent="Panel3/Panel2"]
+margin_left = 358.247
+margin_top = 58.0
+margin_right = 398.247
+margin_bottom = 74.0
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Panel3/Panel2"]
+margin_left = 293.0
+margin_top = 31.0
+margin_right = 459.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="island_load_button" type="Button" parent="Panel3/Panel2/GridContainer"]
+margin_right = 51.0
 margin_bottom = 20.0
 text = "Island"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="volcano_load_button" type="Button" parent="."]
-anchor_left = 0.032
-anchor_top = 0.575
-anchor_right = 0.032
-anchor_bottom = 0.575
-margin_top = 28.0757
-margin_right = 62.0
-margin_bottom = 48.0757
+[node name="volcano_load_button" type="Button" parent="Panel3/Panel2/GridContainer"]
+margin_left = 55.0
+margin_right = 117.0
+margin_bottom = 20.0
 text = "Volcano"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="snow_load_button" type="Button" parent="."]
-anchor_left = 0.032
-anchor_top = 0.575
-anchor_right = 0.032
-anchor_bottom = 0.575
-margin_top = 54.5624
-margin_right = 45.0
-margin_bottom = 74.5624
+[node name="snow_load_button" type="Button" parent="Panel3/Panel2/GridContainer"]
+margin_left = 121.0
+margin_right = 166.0
+margin_bottom = 20.0
 text = "Snow"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="quit_button" type="Button" parent="."]
-anchor_left = 0.032
-anchor_top = 0.575
-anchor_right = 0.032
-anchor_bottom = 0.575
-margin_top = 86.671
-margin_right = 45.0
-margin_bottom = 106.671
-text = "Quit"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Label" type="Label" parent="Panel3/Panel2"]
+margin_left = 338.0
+margin_top = 11.0
+margin_right = 415.0
+margin_bottom = 34.0
+text = "Level Select"
 
-[connection signal="pressed" from="island_load_button" to="." method="_on_island_load_button_pressed"]
-[connection signal="pressed" from="volcano_load_button" to="." method="_on_volcano_load_button_pressed"]
-[connection signal="pressed" from="snow_load_button" to="." method="_on_snow_load_button_pressed"]
-[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Panel3/Panel2/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Panel3/Panel2/GridContainer/island_load_button" to="." method="_on_island_load_button_pressed"]
+[connection signal="pressed" from="Panel3/Panel2/GridContainer/volcano_load_button" to="." method="_on_volcano_load_button_pressed"]
+[connection signal="pressed" from="Panel3/Panel2/GridContainer/snow_load_button" to="." method="_on_snow_load_button_pressed"]
