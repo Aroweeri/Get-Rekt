@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://crane2.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://crane.gd" type="Script" id=2]
 [ext_resource path="res://ball.obj" type="ArrayMesh" id=3]
-[ext_resource path="res://music/lower.wav" type="AudioStream" id=4]
 [ext_resource path="res://music/spin_down.wav" type="AudioStream" id=5]
 [ext_resource path="res://music/anchor_move.wav" type="AudioStream" id=6]
 [ext_resource path="res://music/rotate.wav" type="AudioStream" id=7]
@@ -125,14 +124,13 @@ nodes/node_b = NodePath("..")
 linear_limit/upper_distance = 13.0
 linear_limit/lower_distance = 0.0
 
-[node name="spinSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-
 [node name="spinUpSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -5.0
 
 [node name="spinDownSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -7.0
 
 [node name="anchorSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )

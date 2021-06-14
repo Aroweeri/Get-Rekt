@@ -54,9 +54,9 @@ func handleInput(delta):
 		return;
 		
 	if(Input.is_action_just_pressed("raise")):
-		$spinSound.play();
+		$spinUpSound.play();
 	if(Input.is_action_just_pressed("lower")):
-		$spinSound.play();
+		$spinDownSound.play();
 	if(Input.is_action_just_pressed("rotate_right")):
 		$rotateSound.play();
 	if(Input.is_action_just_pressed("rotate_left")):
@@ -86,11 +86,9 @@ func handleInput(delta):
 		ballHeight -= ball_vertical_speed;
 		
 	if(Input.is_action_just_released("raise")):
-		$spinSound.stop();
-		$spinDownSound.play();
+		$spinUpSound.stop();
 	if(Input.is_action_just_released("lower")):
-		$spinSound.stop();
-		$spinDownSound.play();
+		$spinDownSound.stop();
 	if(Input.is_action_just_released("rotate_right")):
 		$rotateSound.stop();
 	if(Input.is_action_just_released("rotate_left")):
